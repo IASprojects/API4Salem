@@ -1,6 +1,11 @@
 Development: Visual Studio
 // .Net Core 5
 // Test: Api4Salem.postman_collection.json
+**For test:**
+// Run the project in visual studio
+// Import Api4Salem.postman_collection.json in postman client.
+// Run Collection Api4Salem.
+
 
 Create a Notes API using .NET 5.
 The Notes API will allow a consumer to manage personal notes.
