@@ -86,7 +86,7 @@ namespace API_Notes.Controllers
       }
       return resp;
     }
-    [HttpDelete("id")] 
+    [HttpDelete("{id}")] 
     public Response Delete(int id)
     {
       Response resp = new();
