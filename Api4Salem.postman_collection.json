@@ -94,7 +94,7 @@
 							"    pm.response.to.have.status(200); \r",
 							"    \r",
 							"});\r",
-							" pm.test(\"Find Data\", function () {\r",
+							" pm.test(\"Add Succes\", function () {\r",
 							"        var jsonData = pm.response.json();\r",
 							"        pm.expect(jsonData.success).to.eql(true);\r",
 							"});"
@@ -142,7 +142,7 @@
 							"    pm.response.to.have.status(200); \r",
 							"    \r",
 							"});\r",
-							" pm.test(\"Find Data\", function () {\r",
+							" pm.test(\"Edit Succes\", function () {\r",
 							"        var jsonData = pm.response.json();\r",
 							"        pm.expect(jsonData.success).to.eql(true);\r",
 							"});"
@@ -190,7 +190,7 @@
 							"    pm.response.to.have.status(200); \r",
 							"    \r",
 							"});\r",
-							" pm.test(\"Find Data\", function () {\r",
+							" pm.test(\"Delete Success\", function () {\r",
 							"        var jsonData = pm.response.json();\r",
 							"        pm.expect(jsonData.success).to.eql(true);\r",
 							"});"
