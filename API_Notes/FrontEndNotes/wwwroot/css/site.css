@@ -1,0 +1,101 @@
+﻿
+
+#iconAdd {
+  margin-top: 20px;
+  font-size: 50px;
+  color: #000000;
+}
+
+#iconCard {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #000000;
+}
+
+  #iconCard:hover {
+    color: #1861ac;
+    font-size: 22px;
+  }
+
+.card {
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-top: 20px;
+}
+  .card:hover {
+    color: #1861ac;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.cardShow {
+  animation: cardsAnimations;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes cardsAnimations {
+  0% {
+    background-color: lightyellow;
+    left: 0px;
+    top: -100px
+  }
+
+  100% {
+    background-color: white;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+
+
+
+* {
+  margin-bottom: 10px;
+}
+
+#hide {
+  display: none;
+}
+
+form {
+  display: none;
+}
+
+textarea {
+  min-width: 100%;
+  max-width: calc(100% - 30px);
+  display: block;
+}
+
+input {
+  display: block;
+}
+
+@keyframes riseHeight {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 150px;
+  }
+}
+
+.modal-dialog,
+.modal-content {
+  /* 80% of window height */
+  height: 80%;
+}
+
+.modal-body {
+  /* 100% = dialog height, 120px = header + footer */
+  max-height: calc(100% - 120px);
+  overflow-y: scroll;
+}
+
+.md-textarea {
+  height: 100%;
+  width: 100%;
+}

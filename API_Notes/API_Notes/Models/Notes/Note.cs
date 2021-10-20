@@ -16,6 +16,7 @@ namespace API_Notes.Models
     public string Text { get; set; }
 
     public Note() {
+  
     }
     public Note(int id, string text)
     {
