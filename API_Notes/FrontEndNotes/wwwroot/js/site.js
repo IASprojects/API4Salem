@@ -154,8 +154,7 @@ function newCard(r) {
         </div>
         <div class="card-footer d-flex justify-content-end">
            <span style="color:dimgray;">Create ${dateCardCreation}</span>          
-           <i onclick="callDelete(${r.id})" id="iconCard" class="fa fa-trash"></i>  
-
+           <i onclick="callDelete(${r.id})" id="iconCard" class="fa fa-trash"></i>
         </div>
       </div>
 `;

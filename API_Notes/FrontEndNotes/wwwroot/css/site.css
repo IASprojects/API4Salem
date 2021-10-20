@@ -25,7 +25,7 @@
 }
   .card:hover {
     color: #1861ac;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 16px 32px 0 #1861ac;
   }
 
 .cardShow {
@@ -36,7 +36,7 @@
 
 @keyframes cardsAnimations {
   0% {
-    background-color: lightyellow;
+    background-color: #0094ff;
     left: 0px;
     top: -100px
   }
@@ -67,6 +67,7 @@ textarea {
   min-width: 100%;
   max-width: calc(100% - 30px);
   display: block;
+  border-radius: 5px;
 }
 
 input {
