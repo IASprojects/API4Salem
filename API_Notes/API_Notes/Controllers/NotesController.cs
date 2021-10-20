@@ -61,8 +61,9 @@ namespace API_Notes.Controllers
       Response resp = new();
       try
       {
-        request.AddNote(item);
+        request.AddNote(ref item);
         resp.Success = true;
+        resp.Data = item;
       }
       catch (Exception ex)
       {

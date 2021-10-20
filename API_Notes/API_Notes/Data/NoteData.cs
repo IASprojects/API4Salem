@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using API_Notes.Models;
 namespace API_Notes.Data
 {
@@ -9,14 +10,15 @@ namespace API_Notes.Data
   {
     private static NoteData _Instance;
     public static NoteData Instance
-    { 
-      get {
+    {
+      get
+      {
         if (_Instance == null)
         {
           _Instance = new NoteData();
         }
         return _Instance;
-      } 
+      }
     }
     private NoteData()
     {
@@ -37,24 +39,36 @@ namespace API_Notes.Data
     {
       Note result = FilterNote(ID);
       if (result == null)
-        throw new ArgumentException("The Note does not exist"); 
+        throw new ArgumentException("The Note does not exist");
 
       return result;
     }
-    private Note FilterNote(int ID) {
+    private Note FilterNote(int ID)
+    {
+      if (_List.Count == 0) { return null; }
       Note result = (from p in _List
                      where p.ID == ID
                      select p).FirstOrDefault();
       return result;
     }
-    public void AddNote(Note item) {
+    public void AddNote(ref Note item)
+    {
 
-      if (FilterNote(item.ID)!=null) 
+      if (FilterNote(item.ID) != null)
       {
         throw new ArgumentException("The Note Id exists");
       }
-      _List.Add(item);
-    
+
+      int ID = NextId();
+      Note newItem = new Note(ID, item.Text);
+      _List.Add(newItem);
+      item = newItem;
+
+    }
+    private int NextId()
+    {
+      if (_List.Count == 0) { return 1; }
+      return _List.Max(o => o.ID) + 1;
     }
     public void EditNote(Note item)
     {
@@ -76,7 +90,7 @@ namespace API_Notes.Data
 
     }
     protected List<Note> _List;
-    public List<Note> List { get=>_List; }
+    public List<Note> List { get => _List; }
 
 
   }
