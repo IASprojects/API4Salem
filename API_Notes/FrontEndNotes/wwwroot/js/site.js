@@ -23,12 +23,13 @@ async function getapi(url) {
 
   const response = await fetch(url);
   var data = await response.json();
-  console.log(data);
+
   if (response) {
     hideloader();
   }
   cardList = data.data;
   showCards();
+  
 }
 getapi(api_url);
 
@@ -48,7 +49,7 @@ async function callAdd() {
       dataType: 'json',
     });
     var data = await response.json();
-    console.log(data);
+   
     if (response) {
       hideloader();
       cardList.push(data.data);
@@ -64,7 +65,7 @@ async function callDelete(id) {
     method: 'DELETE',
   });
   var data = await response.json();
-  console.log(data);
+
   if (response) {
     hideloader();
     deleteById(id);   
@@ -79,7 +80,7 @@ function deleteById(id) {
       cardList.splice(index, 1);
     }
   })
-  console.log(cardList);
+
   showCards();
 }
 
@@ -90,10 +91,8 @@ function getItem(id) {
   return dataNote;
 }
 async function callEdit() {
-  console.log(ButtonSave.name);
+
   var note = getItem(ButtonSave.name);
-  console.log(cardList);
-  console.log(note);
   note.text = ModalTextArea.value;
   var jsonData = JSON.stringify(note)
   const response = await fetch(api_url, {
@@ -105,7 +104,6 @@ async function callEdit() {
     dataType: 'json',
   });
   var data = await response.json();
-  console.log(data);
   if (response) {
     hideloader();
     editCardList(note);
@@ -141,7 +139,7 @@ function showCards() {
   for (let r of lisOrderDesc) {
     cards += newCard(r);
   }
-
+  CardAddNote.style = ('display: block');
   document.getElementById("notes").innerHTML = cards;
 }
 
